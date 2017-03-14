@@ -60,6 +60,44 @@ Note: You should have configured database for this operation.
 
 ## Commands
 
+#### Crud file command:
+
+```json
+[
+    {
+        "name": "All possible values: default",
+        "fields": "",
+        "validations": "",
+        "controller-namespace": "",
+        "model-namespace": "",
+        "pk": "",
+        "pagination": "25",
+        "indexes": "",
+        "foreign-keys": "",
+        "relationships": "",
+        "route": "yes",
+        "route-group": "",
+        "view-path": "",
+        "localize": "no",
+        "locales": "en"
+    },
+    {
+        "name": "People",
+        "fields": "client_id#bigint; user_id#bigint; first_name#string; prefix#string; last_name#string;",
+        "relationships": "clients#belongsTo#App\\Client,users#belongsTo#App\\User",
+    },
+    {
+        "name": "Clients",
+        "fields": "first_name#bigint; last_name#bigint;",
+        "relationships": "persons#hasMany#App\\Person"
+    }
+]
+```
+
+```
+php artisan crud:file /path/to/crud.json
+```
+
 #### Crud command:
 
 
